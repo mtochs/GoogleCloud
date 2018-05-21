@@ -14,6 +14,8 @@ def remove_whitespace(text):
 	return ' '.join(text.split())
 
 def make_ssml(text):
+	# This binary flips if the last line was a "Read More" to prevent
+	# double pauses after an entry.
 	last_was_readmore = 0
 	output = ['<speak>']
 	for l in text.split("\n")[1:]:
